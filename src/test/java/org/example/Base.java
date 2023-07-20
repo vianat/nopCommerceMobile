@@ -56,12 +56,13 @@ public class Base {
                 ImmutableMap.of("elementId", ((RemoteWebElement)el).getId(),
                         "duration", 2000));
     }
-    public void swipeAction(WebElement ele, String direction){
-        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of
-                ("elementId", ((RemoteWebElement)ele).getId(),
-                "direction", direction,
+    public void swipeLeft(){
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "left", 100, "top", 100,
+                "width", 200, "height", 200,
+                "direction", "left",
                 "percent", 0.75
-            ));
+        ));
     }
 
     @AfterClass
