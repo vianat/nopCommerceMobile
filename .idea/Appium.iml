@@ -78,5 +78,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:7.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.82" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.webjars:jquery:3.6.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-nop:2.0.7" level="project" />
   </component>
 </module>
