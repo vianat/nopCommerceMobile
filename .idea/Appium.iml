@@ -74,10 +74,10 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.apache.commons:commons-lang3:3.12.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: commons-io:commons-io:2.12.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.7" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:7.7.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.82" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.webjars:jquery:3.6.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-nop:2.0.7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.7" level="project" />
   </component>
 </module>
