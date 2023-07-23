@@ -1,4 +1,4 @@
-package org.example;
+package steps;
 
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LongPress extends Base{
+public class LongPressTest extends Base{
     @Test
     public void longPress() throws InterruptedException {
         driver.findElement(AppiumBy.accessibilityId("Views")).click();

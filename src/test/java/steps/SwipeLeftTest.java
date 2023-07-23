@@ -1,10 +1,10 @@
-package org.example;
+package steps;
 
 import io.appium.java_client.AppiumBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SwipeLeft extends Base {
+public class SwipeLeftTest extends Base {
     @Test
     public void swipeLeft(){
 
