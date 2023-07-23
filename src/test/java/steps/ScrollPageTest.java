@@ -1,11 +1,9 @@
-package org.example;
+package steps;
 
-import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-public class ScrollPage extends Base {
+public class ScrollPageTest extends Base {
     @Test
     public void scrollDownPage() throws InterruptedException {
         driver.findElement(AppiumBy.accessibilityId("Views")).click();

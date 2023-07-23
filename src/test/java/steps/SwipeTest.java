@@ -1,11 +1,11 @@
-package org.example;
+package steps;
 
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Swipe extends Base {
+public class SwipeTest extends Base {
     @Test
     public void swipePage(){
         driver.findElement(AppiumBy.accessibilityId("Views")).click();
