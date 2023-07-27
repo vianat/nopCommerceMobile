@@ -2,6 +2,8 @@ package steps;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.Activity;
+import io.cucumber.java.en.Given;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,5 +19,17 @@ public class openByActivityTest extends Base {
         driver.startActivity(activity);
 
         Assert.assertEquals(driver.findElement(AppiumBy.accessibilityId("Select an animation:")).getText(), "Select an animation:");
+    }
+
+
+    @Given("open settings")
+    public void open_settings() {
+
+        Activity activity = new Activity("com.android.settings","com.android.settings.Settings");
+        driver.startActivity(activity);
+
+        String actual = driver.findElement(By.id("com.android.settings:id/homepage_title")).getText();
+
+        Assert.assertEquals(actual, "Settings");
     }
 }
