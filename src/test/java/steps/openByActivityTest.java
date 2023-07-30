@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.Activity;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,5 +32,25 @@ public class openByActivityTest extends Base {
         String actual = driver.findElement(By.id("com.android.settings:id/homepage_title")).getText();
 
         Assert.assertEquals(actual, "Settings");
+    }
+
+    @Given("open wifi settings")
+    public void open_wifi_settings() throws InterruptedException {
+
+        Activity activity = new Activity("com.android.settings","com.android.settings.Settings");
+        driver.startActivity(activity);
+
+        Thread.sleep(100);
+        driver.findElement(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]\n")).click();
+        Thread.sleep(100);
+//        driver.findElement(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout")).click();
+        Thread.sleep(100);
+
+        WebElement el = driver.findElement(AppiumBy.accessibilityId("Wi‑Fi"));
+
+        if (el.getAttribute("checked").equals("true")) {
+        } else el.click();
+
+        Assert.assertEquals(el.getAttribute("checked"), "true");
     }
 }
