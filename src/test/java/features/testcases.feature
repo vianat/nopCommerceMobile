@@ -7,7 +7,7 @@ Feature: Login
 
   @smoke
   Scenario: Open settings
-    Given open gitsettings
+    Given open settings
 
   @Google
   Scenario: Open wifi settings
