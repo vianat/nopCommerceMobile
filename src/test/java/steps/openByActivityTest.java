@@ -41,12 +41,12 @@ public class openByActivityTest extends Base {
         driver.startActivity(activity);
 
         Thread.sleep(100);
-        driver.findElement(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.support.v7.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]\n")).click();
+        driver.findElement(AppiumBy.xpath("//*[@text='Network & internet']")).click();
         Thread.sleep(100);
-//        driver.findElement(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.RelativeLayout")).click();
+        driver.findElement(AppiumBy.xpath("//*[@text='Internet']")).click();
         Thread.sleep(100);
 
-        WebElement el = driver.findElement(AppiumBy.accessibilityId("Wi‑Fi"));
+        WebElement el = driver.findElement(AppiumBy.xpath("//*[@class='android.widget.Switch']"));
 
         if (el.getAttribute("checked").equals("true")) {
         } else el.click();
