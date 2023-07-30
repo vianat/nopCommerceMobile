@@ -7,7 +7,7 @@ Feature: Login
 
   @smoke
   Scenario: Open settings
-    Given open settings
+    Given open gitsettings
 
   @Google
   Scenario: Open wifi settings
@@ -16,3 +16,7 @@ Feature: Login
   @smoke
   Scenario: check toast message
     Given check toast message
+
+  @smoke
+  Scenario: scroll and find product and choose
+    Given find product and choose
