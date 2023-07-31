@@ -18,9 +18,17 @@ public class Hooks extends Base {
 	String userHome = System.getProperty("user.home");
 	@Before
 	public void setUp() throws MalformedURLException {
-		appiumServer = new AppiumServiceBuilder()
-				.withAppiumJS(new File(userHome + "//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
+
+		if(System.getProperty("os.name").equals("Windows 11")){
+			appiumServer = new AppiumServiceBuilder()
+					.withAppiumJS(new File(userHome + "//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+					.withIPAddress("127.0.0.1").usingPort(4723).build();
+		}else{
+			String nodeModulesPath = "/opt/homebrew/lib/node_modules";
+			String appiumMainJsPath = nodeModulesPath + "/appium/build/lib/main.js";
+			appiumServer = new AppiumServiceBuilder()
+					.withAppiumJS(new File(appiumMainJsPath)) .withIPAddress("127.0.0.1").usingPort(4723).build();
+		}
 
 		appiumServer.start();
 
