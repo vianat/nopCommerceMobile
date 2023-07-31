@@ -1,17 +1,12 @@
 @SmokeFeature
-Feature: Login
+Feature: Store
+
+  Background: open store app
+    Given open store app
 
   @smoke
   Scenario: GeneralStoreEndToEndTest
     Given End to End app test
-
-  @smoke
-  Scenario: Open settings
-    Given open settings
-
-  @Google
-  Scenario: Open wifi settings
-    Given open wifi settings
 
   @smoke
   Scenario: check toast message
