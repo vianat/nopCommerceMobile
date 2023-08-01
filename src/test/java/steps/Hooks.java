@@ -36,6 +36,7 @@ public class Hooks extends Base {
 		appiumServer.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
+		options.setChromedriverExecutable(projectDir+ "/src/test/java/resources/chromedriver113.exe");
 		options.setDeviceName("MyEmu");
 
 //      driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);

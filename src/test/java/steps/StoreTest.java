@@ -2,10 +2,16 @@ package steps;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.Activity;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.Set;
 
 public class StoreTest extends Base {
 
@@ -39,7 +45,7 @@ public class StoreTest extends Base {
     public void find_product_and_choose() throws InterruptedException {
 
         Thread.sleep(3000);
-        driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Fuffel");
+        driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Fufel");
         driver.hideKeyboard();
         driver.findElement(By.id("com.androidsample.generalstore:id/radioFemale")).click();
         driver.findElement(By.id("com.androidsample.generalstore:id/spinnerCountry")).click();
@@ -68,7 +74,6 @@ public class StoreTest extends Base {
     public void check_toast_message() throws InterruptedException {
 
         Thread.sleep(3000);
-//        driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Fuffel");
         driver.hideKeyboard();
         driver.findElement(By.id("com.androidsample.generalstore:id/radioFemale")).click();
         driver.findElement(By.id("com.androidsample.generalstore:id/spinnerCountry")).click();
@@ -95,5 +100,36 @@ public class StoreTest extends Base {
         driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
         String toastMess = driver.findElement(By.xpath("(//android.widget.Toast)[1]")).getAttribute("name");
         Assert.assertEquals(toastMess, "Please enter your name");
+    }
+
+    @And("click on {string} button")
+    public void click_on_button(String string) throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(AppiumBy.id("com.androidsample.generalstore:id/btnProceed")).click();
+    }
+
+    @And("switch driver to chrome")
+    public void switchDriverToChrome() throws InterruptedException {
+        Thread.sleep(5000);
+        Set<String> contexts = driver.getContextHandles();
+        for (String contextName: contexts){
+            System.out.println(contextName);
+        }
+        driver.context("WEBVIEW_com.androidsample.generalstore");
+    }
+
+    @And("type {string} in search field")
+    public void typeInSearchField(String arg0) throws InterruptedException {
+        driver.findElement(By.name("q")).sendKeys(arg0);
+        driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//a[@href='https://www.linkedin.com/in/azizdzhon-dzhamolov']")).click();
+        Thread.sleep(2000);
+        driver.pressKey(new KeyEvent(AndroidKey.BACK));
+    }
+
+    @And("switch driver to app")
+    public void switchDriverToApp() {
+        driver.context("NATIVE_APP");
     }
 }

@@ -33,8 +33,9 @@ public class GoogleTest extends Base {
     public void turnOnSwitch() {
         WebElement el = driver.findElement(AppiumBy.xpath("//*[@class='android.widget.Switch']"));
 
-        if (el.getAttribute("checked").equals("true")) {
-        } else el.click();
+        if (!el.getAttribute("checked").equals("true")) {
+            el.click();
+        }
     }
 
     @Then("Check switch is on")
