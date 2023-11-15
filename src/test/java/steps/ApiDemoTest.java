@@ -10,7 +10,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class ApiDemoTest extends Base{
 

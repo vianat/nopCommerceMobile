@@ -12,7 +12,6 @@ Feature: Device
     Then Check switch is on
 
 
-
   @google
   Scenario: Check bluetooth is on
     Given click on "Connected devices"

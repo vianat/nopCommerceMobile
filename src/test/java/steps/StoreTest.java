@@ -10,11 +10,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.Set;
 
 public class StoreTest extends Base {
-
 
     @Given("open store app")
     public static void open_store_app() throws InterruptedException {
@@ -22,6 +20,7 @@ public class StoreTest extends Base {
         driver.startActivity(activity);
         Thread.sleep(3000);
     }
+
     @Given("End to End app test")
     public void end_to_end_app_test() throws InterruptedException {
 
@@ -39,7 +38,6 @@ public class StoreTest extends Base {
         Assert.assertEquals(check,products);
         Thread.sleep(3000);
     }
-
 
     @Given("find product and choose")
     public void find_product_and_choose() throws InterruptedException {
@@ -86,7 +84,6 @@ public class StoreTest extends Base {
 
         Assert.assertEquals(actual, "Please enter your name");
     }
-
 
     @Test
     public void verifyToastMess() throws InterruptedException {

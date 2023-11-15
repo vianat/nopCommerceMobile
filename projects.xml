@@ -1,0 +1,8 @@
+<Projects>
+  <java-xmlbuilder language="Java" scm="SVN">
+    <Location type="URL">http://code.google.com/p/java-xmlbuilder/</Location>
+  </java-xmlbuilder>
+  <JetS3t language="Java" scm="CVS">
+    <Location type="URL">http://jets3t.s3.amazonaws.com/index.html</Location>
+  </JetS3t>
+</Projects>
