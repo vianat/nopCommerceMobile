@@ -21,32 +21,21 @@ public class Hooks extends Base {
 	final String userHome = System.getProperty("user.home");
 	final String systemName = System.getProperty("os.name");
 	final String windowsNpmPath = "/AppData/Roaming/npm/node_modules/";
-	final String macOsNpmPath = "/opt/homebrew/lib/node_modules/";
+	final String macOsNpmPath = "/node_modules/";
 	final String appiumMainPath = "/appium/build/lib/main.js";
 	File logFile = new File(projectDir + "/appiumServer.log");
-	private final DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
 	@Before
 	public void setUp() throws MalformedURLException {
-
 		if(systemName.contains("Windows")){
-
 			appiumBuilder = new AppiumServiceBuilder().withAppiumJS(new File(userHome + windowsNpmPath + appiumMainPath));
 		} else {
-			appiumBuilder = new AppiumServiceBuilder().withAppiumJS(new File(macOsNpmPath + appiumMainPath));
-
+			appiumBuilder = new AppiumServiceBuilder().withAppiumJS(new File(userHome + macOsNpmPath + appiumMainPath));
 		}
 		appiumServer= appiumBuilder.withIPAddress("127.0.0.1").usingPort(4723).withLogFile(logFile).build();
-
 		appiumServer.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
-//		options.setChromedriverExecutable(projectDir+ "/src/test/java/resources/chromedriver.exe");
-//		options.setDeviceName("MyEmu");
-
-//    	driver = new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), options);
-//    	driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
     	driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-
 	}
 	@After
 	public void tearDown(){
