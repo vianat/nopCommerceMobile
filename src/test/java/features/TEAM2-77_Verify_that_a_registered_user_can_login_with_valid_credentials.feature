@@ -8,11 +8,17 @@ Feature: TEAM2-77_Verify_that_a_registered_user_can_login_with_valid_credentials
   @google
   Scenario: login
     Given Click [user] btn
+    And wait 300
+    And Click [login] btn
+    And wait 300
+    And Enter email "team-sun@noreply.portnov.com" and password "ow!<lSy~2H87"
+    And Click [login] btn
+    And wait 300
+    Then Make sure you see text: "FEATURED PRODUCTS" on main page
+    And Click [user] btn
+    And wait 300
+    And Click [log out] btn
+    And wait 500
+    And Click [CONTINUE WITHOUT LOGIN] btn
     And wait 1000
-    Given Click [login] btn
-    And wait 1000
-    And Enter email "team-sun@noreply.portnov.com"
-#    And Enter password "ow!<lSy~2H87"
-#    And Click [Log in] button
-    And wait 2000
-#    Then Make sure you see Log out button and text: "Welcome to our store"
+    Then Make sure you see text: "FEATURED PRODUCTS" on main page
