@@ -1,0 +1,47 @@
+Index: src/test/java/steps/Base.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package steps;\r\n\r\nimport com.google.common.collect.ImmutableMap;\r\nimport io.appium.java_client.android.AndroidDriver;\r\nimport org.openqa.selenium.JavascriptExecutor;\r\nimport org.openqa.selenium.WebElement;\r\nimport org.openqa.selenium.remote.RemoteWebElement;\r\n\r\n\r\npublic class Base {\r\n\r\n    //setup system variables :\r\n        // install nodejs + appium (npm install appium@next)\r\n        //JAVA_HOME = C:\\Program Files\\Java\\jdk20\r\n        //MAVEN_HOME = C:\\Program Files\\apache-maven-3.9.2\r\n        //ANDROID_HOME = C:\\Users\\viana\\AppData\\Local\\Android\\Sdk\r\n        //ANDROID_SDK_ROOT = C:\\Users\\viana\\AppData\\Local\\Android\\Sdk\r\n        //path -> C:\\Users\\viana\\AppData\\Local\\Android\\Sdk\\emulator\r\n        //path -> C:\\Users\\viana\\AppData\\Local\\Android\\Sdk\\platform-tools\r\n        //path -> C:\\Program Files\\apache-maven-3.9.2\\bin\r\n        //path -> C:\\Program Files\\Java\\jdk-20\\bin\r\n        //path -> C:\\Program Files\\Java\\jdk-20\\bin\r\n        //path -> C:\\Program Files\\nodejs\\\r\n    public static AndroidDriver driver;\r\n\r\n    public void longPressOnElement(WebElement el){\r\n        ((JavascriptExecutor)driver).executeScript(\"mobile: longClickGesture\",\r\n                ImmutableMap.of(\"elementId\", ((RemoteWebElement)el).getId(),\r\n                        \"duration\", 2000));\r\n    }\r\n    public void swipeLeft(){\r\n        ((JavascriptExecutor) driver).executeScript(\"mobile: swipeGesture\", ImmutableMap.of(\r\n                \"left\", 100, \"top\", 100,\r\n                \"width\", 200, \"height\", 200,\r\n                \"direction\", \"left\",\r\n                \"percent\", 0.75\r\n        ));\r\n    }\r\n\r\n    public void swipeAction(WebElement ele, String direction){\r\n        ((JavascriptExecutor) driver).executeScript(\"mobile: swipeGesture\", ImmutableMap.of\r\n                (\"elementId\", ((RemoteWebElement)ele).getId(),\r\n                        \"direction\", direction,\r\n                        \"percent\", 0.75\r\n                ));\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/steps/Base.java b/src/test/java/steps/Base.java
+--- a/src/test/java/steps/Base.java	(revision 8deccd63d74aa6d057c6b8fbe99d03261ebf1b43)
++++ b/src/test/java/steps/Base.java	(date 1700207175799)
+@@ -9,18 +9,6 @@
+ 
+ public class Base {
+ 
+-    //setup system variables :
+-        // install nodejs + appium (npm install appium@next)
+-        //JAVA_HOME = C:\Program Files\Java\jdk20
+-        //MAVEN_HOME = C:\Program Files\apache-maven-3.9.2
+-        //ANDROID_HOME = C:\Users\viana\AppData\Local\Android\Sdk
+-        //ANDROID_SDK_ROOT = C:\Users\viana\AppData\Local\Android\Sdk
+-        //path -> C:\Users\viana\AppData\Local\Android\Sdk\emulator
+-        //path -> C:\Users\viana\AppData\Local\Android\Sdk\platform-tools
+-        //path -> C:\Program Files\apache-maven-3.9.2\bin
+-        //path -> C:\Program Files\Java\jdk-20\bin
+-        //path -> C:\Program Files\Java\jdk-20\bin
+-        //path -> C:\Program Files\nodejs\
+     public static AndroidDriver driver;
+ 
+     public void longPressOnElement(WebElement el){
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" project-jdk-name=\"20\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 8deccd63d74aa6d057c6b8fbe99d03261ebf1b43)
++++ b/.idea/misc.xml	(date 1700207372890)
+@@ -7,5 +7,5 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="20" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="20" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
