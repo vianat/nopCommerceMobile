@@ -5,7 +5,7 @@ Feature: TEAM2-77_Verify_that_a_registered_user_can_login_with_valid_credentials
     Given open app
     And wait 6000
 
-  @google
+  @app
   Scenario: login
     Given Click [user] btn
     And wait 1000
