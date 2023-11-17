@@ -21,10 +21,9 @@ public class Hooks extends Base {
 	final String userHome = System.getProperty("user.home");
 	final String systemName = System.getProperty("os.name");
 	final String windowsNpmPath = "/AppData/Roaming/npm/node_modules/";
-	final String macOsNpmPath = "/opt/homebrew/lib/node_modules/";
+	final String macOsNpmPath = "/node_modules/";
 	final String appiumMainPath = "/appium/build/lib/main.js";
 	File logFile = new File(projectDir + "/appiumServer.log");
-	private final DesiredCapabilitiesUtil desiredCapabilitiesUtil = new DesiredCapabilitiesUtil();
 	@Before
 	public void setUp() throws MalformedURLException {
 
