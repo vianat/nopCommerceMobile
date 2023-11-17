@@ -1,11 +1,11 @@
 @app
-Feature: TEAM2-30 Ordering mobile- Registered Customer Can Place Order.
+Feature: TEAM2-30 Registered Customer Can Place Order.
 
   Background: Open NopSuite mobile application
     Given Open NopSuite mobile application
     And wait 6000
 
-  @google
+  @app
   Scenario: login
     Given MAIN buttons initializing
     And Click [user] btn

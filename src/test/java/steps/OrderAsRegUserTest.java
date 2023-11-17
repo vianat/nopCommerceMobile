@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class OrderAsRegUser extends Base {
+public class OrderAsRegUserTest extends Base {
 
     WebElement electronics;
     WebElement AddToCart;

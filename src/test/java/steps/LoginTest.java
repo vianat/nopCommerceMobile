@@ -17,7 +17,6 @@ public class LoginTest extends Base {
     WebElement logOut;
     WebElement CONTINUE_WITHOUT_LOGIN;
     WebElement USER;
-    List<org.openqa.selenium.WebElement> LOGIN_PASSWORD;
 
     @Given("open app")
     public void open_app() {
