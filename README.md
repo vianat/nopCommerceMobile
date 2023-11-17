@@ -10,3 +10,15 @@
         //path -> C:\Program Files\Java\jdk-20\bin
         //path -> C:\Program Files\Java\jdk-20\bin
         //path -> C:\Program Files\nodejs\
+
+
+
+
+
+
+
+
+RUN TESTS :
+    MAC:    mvn test && open target/cucumber-reports/report.html
+
+    WIN:    mvn test && start target/cucumber-reports/report.html

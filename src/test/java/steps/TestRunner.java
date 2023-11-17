@@ -10,11 +10,10 @@ import org.junit.runner.RunWith;
         glue = {"steps"},
         monochrome = false,
         dryRun = false,
-        plugin = {
-                "pretty",
-				"html:target/htmlReports/report.html",
-                "json:target/JsonReports/report.json",
-                "junit:target/JunitReports/report.xml"},
-
-        tags = "@smoke")
+		plugin = { "pretty",
+//				"junit:target/JunitReports/report.xml",
+//				"json:target/JsonReports/report.json",
+				"html:target/cucumber-reports/report.html",
+		},
+        tags = "@app")
 public class TestRunner {}
