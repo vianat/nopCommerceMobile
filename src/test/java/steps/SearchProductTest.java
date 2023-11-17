@@ -12,14 +12,16 @@ public class SearchProductTest extends Base {
 
     WebElement searchField;
     WebElement searchIcon;
-    WebElement addToCArt;
+    WebElement AddToCart;
+    WebElement deleteProduct;
     WebElement CART;
-    WebElement logOut;
-    WebElement CONTINUE_WITHOUT_LOGIN;
+    WebElement HOME;
+    WebElement MENU;
     WebElement USER;
+    WebElement continueShopping;
 
-    @Given("Click in search field")
-    public void clickInSearchField() {
+    @And("Tap in search field")
+    public void tapInSearchField() {
         searchField = driver.findElement(AppiumBy.className("android.widget.EditText"));
         searchField.click();
     }
@@ -29,56 +31,20 @@ public class SearchProductTest extends Base {
         searchField.sendKeys(prod);
     }
 
-    @Given("Click [search icon]")
-    public void clickSearchIcon() {
+    @And("Tap [search icon]")
+    public void tapSearchIcon() {
         searchIcon = driver.findElement(AppiumBy.xpath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View"));
         searchIcon.click();
     }
 
-    @And("Click on first product")
-    public void clickOnFirstProduct() {
+    @And("Tap on first product")
+    public void tapOnFirstProduct() {
         driver.findElement(AppiumBy.xpath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[5]/android.view.View/android.view.View/android.widget.ImageView")).click();
     }
 
-    @And("Click [ADD TO CART]")
-    public void clickADDTOCART() {
-        addToCArt = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='ADD TO CART']"));
-        addToCArt.click();
-    }
-
-    @And("Scroll down")
-    public void scrollDown() throws InterruptedException {
-//        boolean canScrollMore = true;
-//        do{
-//            canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
-//                "left",  100,   "top", 100,
-//                "width", 1000, "height", 2000,
-//                "direction", "down",
-//                "percent", 50.0
-//        ));
-//        }while(canScrollMore);
-//
-//        Thread.sleep(2000);
-        swipe_left();
-    }
-
-    @And("Click [CART] button")
-    public void clickCARTButton() {
-        CART = driver.findElement(AppiumBy.accessibilityId("1 Tab 3 of 4"));
-        CART.click();
-    }
-
-    public void swipeAction(WebElement ele, String direction){
-        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of
-                ("elementId", ((RemoteWebElement)ele).getId(),
-                        "direction", direction,
-                        "percent", 50.75
-                ));
-    }
-
-    public void swipe_left(){
-        WebElement firstImage = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='HTC - One (M8) 4G LTE Cell Phone with 32GB Memory - Gunmetal (Sprint)']"));
-        swipeAction(firstImage, "DOWN");
-
+    @And("Tap [continue shopping]")
+    public void tapContinueShopping() {
+        continueShopping = driver.findElement(AppiumBy.accessibilityId("CONTINUE SHOPPING"));
+        continueShopping.click();
     }
 }

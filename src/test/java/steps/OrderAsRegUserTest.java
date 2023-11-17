@@ -12,10 +12,10 @@ public class OrderAsRegUserTest extends Base {
 
     WebElement electronics;
     WebElement AddToCart;
-    WebElement CART;
     WebElement cameraAndPhoto;
     WebElement product;
     WebElement deleteProduct;
+    WebElement CART;
     WebElement HOME;
     WebElement MENU;
     WebElement USER;
