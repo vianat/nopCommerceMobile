@@ -29,22 +29,15 @@ public class Hooks extends Base {
 	public void setUp() throws MalformedURLException {
 
 		if(systemName.contains("Windows")){
-
 			appiumBuilder = new AppiumServiceBuilder().withAppiumJS(new File(userHome + windowsNpmPath + appiumMainPath));
 		} else {
 			appiumBuilder = new AppiumServiceBuilder().withAppiumJS(new File(macOsNpmPath + appiumMainPath));
-
 		}
 		appiumServer= appiumBuilder.withIPAddress("127.0.0.1").usingPort(4723).withLogFile(logFile).build();
 
 		appiumServer.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
-//		options.setChromedriverExecutable(projectDir+ "/src/test/java/resources/chromedriver.exe");
-//		options.setDeviceName("MyEmu");
-
-//    	driver = new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), options);
-//    	driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
     	driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
 	}

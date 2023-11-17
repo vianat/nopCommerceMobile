@@ -16,5 +16,5 @@ import org.junit.runner.RunWith;
                 "json:target/JsonReports/report.json",
                 "junit:target/JunitReports/report.xml"},
 
-        tags = "@smoke")
+        tags = "@app")
 public class TestRunner {}
