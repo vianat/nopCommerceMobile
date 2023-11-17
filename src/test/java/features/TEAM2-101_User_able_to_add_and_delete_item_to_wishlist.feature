@@ -21,10 +21,10 @@ Feature: TEAM2-127 Customer Can Increase Quantity of Product
 
     And Tap [WISHLIST] button
     And wait 1000
-    And Tap [trash] icon on product
+    And Tap trash icon on product
 
     And wait 1000
 
-#    Then Verify massage "The wishlist is empty!" is displayed
+    And Verify massage "The wishlist is empty!" is displayed
 
-#    And Tap HOME button
+    Then Tap HOME button
