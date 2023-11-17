@@ -74,7 +74,7 @@ public class OrderAsRegUserTest extends Base {
     @And("Tap USER button")
     public void tapUSERButton() throws InterruptedException {
         Thread.sleep(1000);
-        USER= driver.findElement(AppiumBy.xpath("//android.widget.ImageView[4]"));
+        USER = driver.findElement(AppiumBy.xpath("//android.widget.ImageView[4]"));
         USER.click();
     }
 }

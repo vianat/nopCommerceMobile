@@ -1,26 +1,16 @@
 package steps;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.android.Activity;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class IncreaseQuantity extends Base {
+public class IncreaseQuantityTest extends Base {
 
-    WebElement electronics;
-    WebElement AddToCart;
-    WebElement cameraAndPhoto;
-    WebElement product;
     WebElement plus;
     WebElement minus;
-    WebElement CART;
-    WebElement HOME;
-    WebElement MENU;
-    WebElement USER;
 
     @And("Tap [+] button to increase quantity up to {int}")
     public void tapButtonToIncreaseQuantityUpTo(int max) throws InterruptedException {
@@ -46,4 +36,5 @@ public class IncreaseQuantity extends Base {
             Thread.sleep(200);
         }
     }
+
 }
