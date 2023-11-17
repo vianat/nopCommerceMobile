@@ -1,8 +1,8 @@
 @app
 Feature: TEAM2-30 Registered Customer Can Place Order.
 
-  Background: Open NopSuite mobile application
-    Given Open NopSuite mobile application
+  Background: open app
+    Given open app
     And wait 6000
 
   @app

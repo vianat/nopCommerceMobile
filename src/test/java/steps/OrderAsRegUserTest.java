@@ -20,13 +20,6 @@ public class OrderAsRegUserTest extends Base {
     WebElement MENU;
     WebElement USER;
 
-
-    @Given("Open NopSuite mobile application")
-    public void openNopSuiteMobileApplication() {
-        Activity activity = new Activity("com.nopadvance.team", "com.nopadvance.team.MainActivity");
-        driver.startActivity(activity);
-    }
-
     @Given("MAIN buttons initializing")
     public void mainButtonsInitializing() throws InterruptedException {
         Thread.sleep(300);
