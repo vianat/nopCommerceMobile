@@ -17,7 +17,7 @@ public class IncreaseQuantityTest extends Base {
         plus = driver.findElement(AppiumBy.xpath("(//android.widget.ScrollView//android.view.View)[7]"));
         for (int i = 0; i < max; i++) {
             plus.click();
-            Thread.sleep(200);
+            Thread.sleep(300);
         }
     }
 
@@ -33,7 +33,7 @@ public class IncreaseQuantityTest extends Base {
         for (int i = 5; i >= how; i--) {
             System.out.println(i+"-"+how);
             minus.click();
-            Thread.sleep(200);
+            Thread.sleep(500);
         }
     }
 

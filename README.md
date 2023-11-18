@@ -13,12 +13,8 @@
 
 
 
-
-
-
-
-
-RUN TESTS :
-    MAC:    mvn test && open target/cucumber-reports/report.html
-
-    WIN:    mvn test && start target/cucumber-reports/report.html
+#RUN TESTS :
+    #MAC:    
+        (mvn test || true)  && open target/cucumber-reports/report.html
+    #WIN:
+        (mvn test || true) && start target/cucumber-reports/report.html

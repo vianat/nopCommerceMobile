@@ -19,24 +19,27 @@ public class LoginTest extends Base {
     WebElement USER;
 
     @Given("open app")
-    public void open_app() {
+    public void open_app() throws InterruptedException {
         Activity activity = new Activity("com.nopadvance.team","com.nopadvance.team.MainActivity");
         driver.startActivity(activity);
+        Thread.sleep(7000);
     }
 
     @And("wait {int}")
     public void wait(int ms) throws InterruptedException {
-        Thread.sleep(ms);
+        Thread.sleep(ms + 1000);
     }
 
     @And("Click [login] btn")
-    public void clickLoginBtn() {
+    public void clickLoginBtn() throws InterruptedException {
+        Thread.sleep(1500);
         logIn = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='LOG IN']"));
         logIn.click();
     }
 
     @And("Enter email {string} and password {string}")
     public void enterEmailAndPassword(String login, String password) throws InterruptedException {
+        Thread.sleep(1500);
         var el = driver.findElements(AppiumBy.xpath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText"));
 
         el.get(0).click();
@@ -53,25 +56,29 @@ public class LoginTest extends Base {
     }
 
     @Given("Click [user] btn")
-    public void clickUserBtn() {
+    public void clickUserBtn() throws InterruptedException {
+        Thread.sleep(1500);
         USER = driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Tab 4 of 4']"));
         USER.click();
     }
 
     @And("Click [log out] btn")
-    public void clickLogOutBtn() {
+    public void clickLogOutBtn() throws InterruptedException {
+        Thread.sleep(1500);
         logOut = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Log out']"));
         logOut.click();
     }
 
     @And("Click [CONTINUE WITHOUT LOGIN] btn")
-    public void clickCONTINUEWITHOUTLOGINBtn() {
+    public void clickCONTINUEWITHOUTLOGINBtn() throws InterruptedException {
+        Thread.sleep(1500);
         CONTINUE_WITHOUT_LOGIN = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='CONTINUE WITHOUT LOGIN']"));
         CONTINUE_WITHOUT_LOGIN.click();
     }
 
     @Then("Make sure you see text: {string} on main page")
-    public void makeSureYouSeeTextOnMainPage(String expected) {
+    public void makeSureYouSeeTextOnMainPage(String expected) throws InterruptedException {
+        Thread.sleep(1500);
         String actual = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='FEATURED PRODUCTS']"))
                 .getAttribute("content-desc");
         System.out.println(actual);
