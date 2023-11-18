@@ -22,33 +22,33 @@ public class SearchProductTest extends Base {
 
     @And("Tap in search field")
     public void tapInSearchField() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         searchField = driver.findElement(AppiumBy.className("android.widget.EditText"));
         searchField.click();
     }
 
     @And("Enter {string} in search field")
     public void enterInSearchField(String prod) throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         searchField.sendKeys(prod);
     }
 
     @And("Tap [search icon]")
     public void tapSearchIcon() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         searchIcon = driver.findElement(AppiumBy.xpath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View"));
         searchIcon.click();
     }
 
     @And("Tap on first product")
     public void tapOnFirstProduct() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         driver.findElement(AppiumBy.xpath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.view.View[5]/android.view.View/android.view.View/android.widget.ImageView")).click();
     }
 
     @And("Tap [continue shopping]")
     public void tapContinueShopping() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         continueShopping = driver.findElement(AppiumBy.accessibilityId("CONTINUE SHOPPING"));
         continueShopping.click();
     }

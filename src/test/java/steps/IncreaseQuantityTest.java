@@ -14,6 +14,7 @@ public class IncreaseQuantityTest extends Base {
 
     @And("Tap [+] button to increase quantity up to {int}")
     public void tapButtonToIncreaseQuantityUpTo(int max) throws InterruptedException {
+        Thread.sleep(2500);
         plus = driver.findElement(AppiumBy.xpath("(//android.widget.ScrollView//android.view.View)[7]"));
         for (int i = 0; i < max; i++) {
             plus.click();
@@ -29,6 +30,7 @@ public class IncreaseQuantityTest extends Base {
 
     @And("Tap [-] button to decrease quantity to {int}")
     public void tapButtonToDecreaseQuantityTo(int how) throws InterruptedException {
+        Thread.sleep(2500);
         minus = driver.findElement(AppiumBy.xpath("(//android.widget.ScrollView//android.view.View)[5]"));
         for (int i = 5; i >= how; i--) {
             System.out.println(i+"-"+how);

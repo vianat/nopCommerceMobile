@@ -1,5 +1,5 @@
 @app
-Feature: TEAM2-2_User_can_search_product_and_buy
+Feature: TEAM2-55_User_can_search_product_and_buy
 
   Background: open app
     Given open app

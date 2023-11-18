@@ -14,7 +14,7 @@
 
 
 #RUN TESTS :
-    #MAC:    
+    MAC:    
         (mvn test || true)  && open target/cucumber-reports/report.html
-    #WIN:
+    WIN:
         (mvn test || true) && start target/cucumber-reports/report.html

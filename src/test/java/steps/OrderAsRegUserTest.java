@@ -35,49 +35,49 @@ public class OrderAsRegUserTest extends Base {
 
     @And("Tap Add To Cart button")
     public void tapAddToCartButton() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         AddToCart = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='ADD TO CART']"));
         AddToCart.click();
     }
 
     @And("Tap Shopping Cart button")
     public void tapShoppingCartButton() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         CART = driver.findElement(AppiumBy.xpath("//android.widget.ImageView[3]"));
         CART.click();
     }
 
     @And("Tap on Electronics")
     public void tapOnElectronics() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         electronics = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='ELECTRONICS']"));
         electronics.click();
     }
 
     @And("Tap on Camera&Photo")
     public void tapOnCameraPhoto() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         cameraAndPhoto = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='CAMERA & PHOTO']"));
         cameraAndPhoto.click();
     }
 
     @And("Tap on any product")
     public void tapOnAnyProduct() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         product = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Leica T Mirrorless Digital Camera']"));
         product.click();
     }
 
     @And("Tap delete button")
     public void tapDeleteButton() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         deleteProduct = driver.findElement(AppiumBy.xpath("(//android.widget.ScrollView//android.view.View)[8]"));
         deleteProduct.click();
     }
 
     @And("Tap USER button")
     public void tapUSERButton() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         USER = driver.findElement(AppiumBy.xpath("//android.widget.ImageView[4]"));
         USER.click();
     }

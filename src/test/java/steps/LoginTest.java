@@ -32,14 +32,14 @@ public class LoginTest extends Base {
 
     @And("Click [login] btn")
     public void clickLoginBtn() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2500);
         logIn = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='LOG IN']"));
         logIn.click();
     }
 
     @And("Enter email {string} and password {string}")
     public void enterEmailAndPassword(String login, String password) throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         var el = driver.findElements(AppiumBy.xpath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText"));
 
         el.get(0).click();
@@ -57,28 +57,28 @@ public class LoginTest extends Base {
 
     @Given("Click [user] btn")
     public void clickUserBtn() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         USER = driver.findElement(AppiumBy.xpath("//android.widget.ImageView[@content-desc='Tab 4 of 4']"));
         USER.click();
     }
 
     @And("Click [log out] btn")
     public void clickLogOutBtn() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         logOut = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='Log out']"));
         logOut.click();
     }
 
     @And("Click [CONTINUE WITHOUT LOGIN] btn")
     public void clickCONTINUEWITHOUTLOGINBtn() throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         CONTINUE_WITHOUT_LOGIN = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='CONTINUE WITHOUT LOGIN']"));
         CONTINUE_WITHOUT_LOGIN.click();
     }
 
     @Then("Make sure you see text: {string} on main page")
     public void makeSureYouSeeTextOnMainPage(String expected) throws InterruptedException {
-        Thread.sleep(1500);
+        Thread.sleep(2000);
         String actual = driver.findElement(AppiumBy.xpath("//android.view.View[@content-desc='FEATURED PRODUCTS']"))
                 .getAttribute("content-desc");
         System.out.println(actual);

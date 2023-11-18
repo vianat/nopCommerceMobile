@@ -1,5 +1,5 @@
 @app
-Feature: TEAM2-127 Customer Can Increase Quantity of Product
+Feature: TEAM2-101 Customer Can Increase Quantity of Product
 
   Background: open app
     Given open app
