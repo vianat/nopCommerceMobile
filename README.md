@@ -5,9 +5,11 @@
 # Description
 
     This project comprises automated tests for a web application using Java, Appium, and Cucumber.
-    The tests are designed to validate the functionality of the application using the Behavior Driven Development (BDD) approach.
+    The tests are designed to validate the functionality of the application
+    using the Behavior Driven Development (BDD) approach.
 
 # Requirements
+
     * Java 17
     * Install Android Studio -> create emulator: Pixel7pro
     * install system variables:
@@ -30,6 +32,7 @@
     Download all dependencies: mvn clean install
 
 # Running:
+
     1. Run emulator:  emulator @emulator_name
 
     1. Navigate to the project directory.
